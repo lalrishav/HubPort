@@ -2,6 +2,7 @@ import socket
 import threading
 import os
 import pickle
+from PIL import ImageGrab
 
 def download(name,socket):
 	fileName = socket.recv(1024)
@@ -67,6 +68,12 @@ def Main():
 					songs.append(getFilename)
 				elif ext=="exe":
 					installer.append(getFileName)
+				elif ext == "jpeg":
+					image = ImageGrab.grab()
+					image.save(r'C:\Users\shubham\Desktop\Python\ScreenShots\screen.jpg')        #when image is at local disk
+					file = open('C:\Users\shubham\Desktop\Python\ScreenShots\screen.jpg', 'rb')
+                                        content = file.read()
+					images.append(content)
 				else:
 					others.append(others)
 
