@@ -6,11 +6,6 @@ import pickle
 def download(name,socket):
 	fileName = socket.recv(1024)
 	print("recieved")
-	if os.path.isfile(fileName):
-		#socket.send("EXISTS " + str(os.path.getsize(fileName)))
-		#print(os.path.getsize(fileName))
-		#response = socket.recv(1024)
-		#if response[:2]== 'OK':
 		print(fileName)
 		print("file exists")
 		socket.send("File Exists")
